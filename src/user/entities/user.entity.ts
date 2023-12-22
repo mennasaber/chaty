@@ -11,8 +11,8 @@ export class User {
   phoneNumber: string;
   @Prop({ type: Boolean, default: false })
   isVerified: boolean;
-  @Prop({ type: Number, default: null })
-  otp: number;
+  @Prop({ type: String, default: null })
+  otp: string;
   @Prop({ type: Date, default: null })
   otpExpiresAt: Date;
   @Prop({ type: Boolean, default: false })
