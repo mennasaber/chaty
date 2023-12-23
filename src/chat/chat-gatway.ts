@@ -18,6 +18,6 @@ export class ChatGateway {
     //socket.emit('recieve_message', body);
 
     //NOTE: Test to send event to all users (Broadcast)
-    this.server.sockets.emit('recieve_message', body);
+    this.server.emit('recieve_message', body);
   }
 }
