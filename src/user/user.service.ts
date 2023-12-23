@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import * as dayjs from 'dayjs';
 import { Model } from 'mongoose';
-import { Utilities } from 'src/utilities';
+import { Utilities } from 'src/utilities/utilities';
 import { CreateUserDto } from '../auth/dto/user.dto';
 import { User, UserDocument } from './entities/user.entity';
 @Injectable()
