@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { UserDocument } from 'src/user/entities/user.entity';
 import { UserService } from 'src/user/user.service';
 import { CreateUserDto } from './dto/user.dto';
 
@@ -17,5 +18,12 @@ export class AuthService {
 
   findOne(id: string) {
     return this.userService.findById(id);
+  }
+
+  async verifyOtp(user: UserDocument, otp: string) {
+    await this.userService.verify(user._id, otp);
+    return {
+      message: 'User verified successfully!',
+    };
   }
 }
