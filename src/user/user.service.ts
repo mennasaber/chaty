@@ -27,4 +27,8 @@ export class UserService {
       otpExpiresAt: dayjs().add(5, 'minute'),
     });
   }
+
+  findById(id: string) {
+    return this.userModel.findOne({ _id: id, removed: false });
+  }
 }

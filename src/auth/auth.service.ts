@@ -14,4 +14,8 @@ export class AuthService {
     const token = await this.jwtService.signAsync({ _id: user._id });
     return { token };
   }
+
+  findOne(id: string) {
+    return this.userService.findById(id);
+  }
 }
